@@ -7,16 +7,14 @@ pipeline {
                     run 'mvn clean compile'
                 }
             }
-           }
- stages {
+
          stage('Build Stage') {
                steps {
                    withMaven(maven : 'Maven-3.6.1')
                    run 'mvn clean install'
                   }
          }
-        }
-    stages {
+
         stage('Testing Stage') {
               steps {
                   withMaven(maven : 'Maven-3.6.1')
