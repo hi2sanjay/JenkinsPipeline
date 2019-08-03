@@ -4,21 +4,21 @@ pipeline {
             stage('Compile Stage') {
                 steps {
                     withMaven(maven : 'Maven-3.6.1')
-                    run 'mvn clean compile'
+                    'mvn clean compile'
                 }
             }
 
          stage('Build Stage') {
                steps {
                    withMaven(maven : 'Maven-3.6.1')
-                   run 'mvn clean install'
+                   'mvn install'
                   }
          }
 
         stage('Testing Stage') {
               steps {
                   withMaven(maven : 'Maven-3.6.1')
-                  run 'mvn clean test'
+                  'mvn test'
                  }
            }
         stage('Deploy Stage') {
